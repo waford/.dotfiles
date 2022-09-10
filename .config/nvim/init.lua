@@ -1,6 +1,7 @@
 require("waford.set")
 require("waford.packer")
 require("waford.remap")
+require("waford.autosave")
 -- require('plugins')
 -- require('lsp')
 
