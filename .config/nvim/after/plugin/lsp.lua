@@ -34,7 +34,7 @@ end
 local lspconfig = require('lspconfig')
 local coq = require('coq')
 -- Initiate lsp servers --
-local servers = {'clangd', 'pyright'}
+local servers = {'clangd', 'pyright', 'texlab'}
 
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
