@@ -2,6 +2,6 @@ vim.g.tokyonight_transparent_sidebar = true
 vim.g.tokyonight_transparent = true
 vim.opt.background = "dark"
 
-vim.cmd("colorscheme tokyonight")
-print("Color Scheme Loaded")
+vim.cmd[[colorscheme tokyonight-night]]
+print("After")
 
