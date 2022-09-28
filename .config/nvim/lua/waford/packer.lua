@@ -12,4 +12,7 @@ return require('packer').startup(function(use)
     use 'ms-jpq/coq.artifacts'
     use 'ms-jpq/coq.thirdparty'
     use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}  
+    use 'simrat39/rust-tools.nvim'
+    use 'nvim-lua/plenary.nvim'
+    use 'mfussenegger/nvim-dap'
 end)

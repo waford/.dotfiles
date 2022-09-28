@@ -192,7 +192,6 @@ bar {
 bindsym $sup+l exec "i3lock -c 000000"
 
 exec_always --no-startup-id ~/.config/i3/monitor_config.sh
-exec_always --no-startup-id 'nitrogen --restore'
 
 # Start specifc applications on workspaces
 
@@ -210,4 +209,4 @@ for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Slack"] move to workspace $ws4
 exec --no-startup-id spotify
 
-
+exec_always --no-startup-id 'nitrogen --restore'
