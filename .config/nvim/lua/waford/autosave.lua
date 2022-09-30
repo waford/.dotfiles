@@ -7,7 +7,6 @@ local start_pdflatex = function(filename)
     local tex_compile_cmd = pdflatex_cmd .. bibtex_cmd .. pdflatex_cmd .. pdflatex_cmd
 
     local job_id = vim.fn.jobstart(tex_compile_cmd)
-    vim.fn.jobwait({job_id})
 end
 
 vim.api.nvim_create_autocmd("BufWritePost", {
@@ -18,4 +17,5 @@ vim.api.nvim_create_autocmd("BufWritePost", {
         start_pdflatex(filename)
     end,
 })
+
 

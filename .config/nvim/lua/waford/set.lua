@@ -13,6 +13,8 @@ vim.opt.smartindent = true              -- Tabing will indent
 vim.opt.autoindent = true               -- Enable autoindent
 vim.opt.colorcolumn = '100'              -- Place a column at 100 characters
 
+vim.opt.splitright = true
+
 -- Search Options
 vim.opt.hlsearch = false                -- Disable search highlighting
 vim.opt.incsearch = true                -- Enable incremental search
