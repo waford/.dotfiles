@@ -185,6 +185,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        status_command exec ~/.config/i3status/net-speed.sh
 }
 
 
@@ -209,4 +210,4 @@ for_window [class="Spotify"] move to workspace $ws5
 for_window [class="Slack"] move to workspace $ws4
 exec --no-startup-id spotify
 
-exec_always --no-startup-id 'nitrogen --restore'
+exec_always --no-startup-id "nitrogen --restore &"

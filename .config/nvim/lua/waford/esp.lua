@@ -13,7 +13,6 @@ local function on_event(bufnum, data)
 end
 
 local function monitor(port, bufnum)
-    vim.api.nvim_buf_set_lines(bufnum, 0, -1, false, {})
     vim.fn.jobstart({"idf.py", "-p", port, "monitor"},{
         on_stdout = function(_, data)
             on_event(bufnum, data)
@@ -37,17 +36,22 @@ local function flash(port)
             on_event(bufnum, data)
         end,
         on_stderr = function(_, data)
+            print("Stderr")
             on_event(bufnum, data)
         end,
         on_exit = function()
-       --     vim.api.nvim_buf_delete({bufnum})
-            vim.api.nvim_win_close(win, true) 
-            --monitor(port, bufnum)
+            print(M.err) 
+            if not M.err then
+                vim.api.nvim_win_close(win, true) 
+                monitor(port)
+            end
         end,
     })
 end
 
 local function test() 
+    M.err = false
+    print(M.err)
     if not M.serial_port then
         vim.ui.input({
             prompt = "Serial Port: ",
@@ -59,12 +63,10 @@ local function test()
                     M.serial_port = input  
                 else
                     print("The serial port", input, "either does not exist or is not open for reading")
-                    return
                 end
             end
         end)
     end
-    print("Flashing on port", M.serial_port)
     flash(M.serial_port)
 end
 

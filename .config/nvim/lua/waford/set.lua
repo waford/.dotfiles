@@ -31,3 +31,5 @@ vim.g.mapleader = " "                   -- Set leader to space
 vim.g.coq_settings = { 
     auto_start = 'shut-up',
 }
+
+

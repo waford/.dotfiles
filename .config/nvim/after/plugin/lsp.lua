@@ -32,7 +32,6 @@ end
 
 
 local lspconfig = require('lspconfig')
-local coq = require('coq')
 -- Initiate lsp servers --
 local servers = {'clangd', 'cmake', 'pyright', 'rust_analyzer', 'texlab'}
 
@@ -42,8 +41,8 @@ local lsp_flags = {
 }
 
 for _, lsp in pairs(servers) do
-    lspconfig[lsp].setup(coq.lsp_ensure_capabilities({
+    lspconfig[lsp].setup{
         on_attach = on_attach,
         flags = lsp_flags,
-    }))
+    }
 end
