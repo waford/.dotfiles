@@ -197,15 +197,15 @@ exec_always --no-startup-id ~/.config/i3/monitor_config.sh
 # Start specifc applications on workspaces
 
 # Workspace assign to specific monitors
-workspace 1 output DP-0
-workspace 2 output DP-0
-workspace 3 output HDMI-1
-workspace 4 output HDMI-1
-workspace 5 output HDMI-1
+workspace 1     output DP-0
+workspace 2     output DP-0
+workspace 8     output HDMI-1
+workspace 9     output HDMI-1
+workspace 10    output HDMI-1
 
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal; workspace 1'
 exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 2'
-exec --no-startup-id i3-msg 'workspace 3; exec firefox; workspace 8'
+exec --no-startup-id i3-msg 'workspace 8; exec firefox; workspace 8'
 for_window [class="Spotify"] move to workspace $ws10
 for_window [class="Slack"] move to workspace $ws9
 for_window [class="Signal"] move to workspace $ws9
