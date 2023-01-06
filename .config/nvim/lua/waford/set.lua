@@ -11,7 +11,9 @@ vim.opt.shiftwidth = 4                  -- Sets width of indent to 4 spaces
 vim.opt.expandtab = true                -- Expands tab key to spaces
 vim.opt.smartindent = true              -- Tabing will indent
 vim.opt.autoindent = true               -- Enable autoindent
-vim.opt.colorcolumn = '100'              -- Place a column at 100 characters
+vim.opt.colorcolumn = '80'              -- Place a column at 80 characters
+vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
 
 vim.opt.splitright = true
 
@@ -27,9 +29,5 @@ vim.opt.spell = true                    -- Enable spell check
 
 vim.g.mapleader = " "                   -- Set leader to space
 
--- Configure coq_nvim pluigin --
-vim.g.coq_settings = { 
-    auto_start = 'shut-up',
-}
 
 

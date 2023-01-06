@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/waford/Georgia_Tech/2022Spring/CS4210/Project2/Project2.1/CS4210-Project2/TinyFile/src/tinyfile'
+let g:netrw_dirhist_2='/home/waford/Georgia_Tech/2022Spring/CS4210/Project2/Project2.1/CS4210-Project2/TinyFile/src'
+let g:netrw_dirhist_1='/home/waford/Georgia_Tech/2022Spring/CS4210/Project2/Project2.1/CS4210-Project2/TinyFile/src/tinyfile'
+let g:netrw_dirhist_0='/home/waford/Georgia_Tech/2022Spring/CS4210/Project2/Project2.1/CS4210-Project2/TinyFile/src'
+let g:netrw_dirhist_9='/home/waford/Georgia_Tech/2022Spring/CS4210/Project2/Project2.1/CS4210-Project2/TinyFile/src/tinyfile'
+let g:netrw_dirhist_8='/home/waford/Georgia_Tech/2022Spring/CS4210/Project2/Project2.1/CS4210-Project2/TinyFile/src'
+let g:netrw_dirhist_7='/home/waford/Georgia_Tech/2022Spring/CS4210/Project2/Project2.1/CS4210-Project2/TinyFile'
+let g:netrw_dirhist_6='/home/waford/Georgia_Tech/2022Spring/CS4210/Project2/Project2.1/CS4210-Project2/TinyFile/src/tinyfile'
+let g:netrw_dirhist_5='/home/waford/Georgia_Tech/2022Spring/CS4210/Project2/Project2.1/CS4210-Project2/TinyFile/src'
+let g:netrw_dirhist_4='/home/waford/Georgia_Tech/2022Spring/CS4210/Project2/Project2.1/CS4210-Project2/TinyFile/src/client'
