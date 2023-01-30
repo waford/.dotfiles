@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
         'rose-pine/neovim',
         as = 'rose-pine',
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            g.vim.cmd('colorscheme rose-pine')
         end
     })
 
@@ -40,6 +40,7 @@ return require('packer').startup(function(use)
             {'saadparwaiz1/cmp_luasnip'},
             {'hrsh7th/cmp-nvim-lsp'},
             {'hrsh7th/cmp-nvim-lua'},
+            {'kdheepak/cmp-latex-symbols'},
 
             -- Snippets
             {'L3MON4D3/LuaSnip'},
