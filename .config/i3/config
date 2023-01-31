@@ -203,6 +203,9 @@ workspace 8     output HDMI-1
 workspace 9     output HDMI-1
 workspace 10    output HDMI-1
 
+
+exec_always --no-startup-id picom &
+exec_always --no-startup-id ~/.fehbg
 exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal; workspace 1'
 exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 2'
 exec --no-startup-id i3-msg 'workspace 8; exec firefox; workspace 8'
@@ -212,7 +215,3 @@ for_window [class="Signal"] move to workspace $ws9
 exec --no-startup-id spotify
 exec --no-startup-id slack
 exec --no-startup-id signal-desktop
-
-
-
-exec_always --no-startup-id "nitrogen --restore &"
