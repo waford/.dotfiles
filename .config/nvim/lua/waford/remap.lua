@@ -3,13 +3,14 @@ local inoremap = require("waford.keymap").inoremap
 local vnoremap = require("waford.keymap").vnoremap
 local xnoremap = require("waford.keymap").xnoremap
 
-local test = require("waford.esp").test
-
 nnoremap("<leader>pd", vim.cmd.Ex)
 
 -- J or K will move highlighted blocks of code
 vnoremap("J", ":m '>+1<CR>gv=gv")
 vnoremap("K", ":m '<-2<CR>gv=gv")
+
+-- Format
+nnoremap("<leader>ff", "ggVG=<C-o>")
 
 -- Auto-center Up/Down Jumps
 nnoremap("<C-d>", "<C-d>zz")
