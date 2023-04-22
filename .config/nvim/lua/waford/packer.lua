@@ -12,11 +12,18 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+   -- use ({
+   --     'rose-pine/neovim',
+   --     as = 'rose-pine',
+   --     config = function()
+   --         vim.cmd('colorscheme rose-pine')
+   --     end
+   -- })
     use ({
-        'rose-pine/neovim',
-        as = 'rose-pine',
+        "EdenEast/nightfox.nvim",
+        as = "nightfox",
         config = function()
-            vim.cmd('colorscheme rose-pine')
+            vim.cmd("colorscheme nightfox")
         end
     })
 
@@ -48,16 +55,4 @@ return require('packer').startup(function(use)
         }
     }
 
-    --
-    --    use 'folke/tokyonight.nvim'
-    --    use 'neovim/nvim-lspconfig'
-    --     use { 'ms-jpq/coq_nvim', run = 'python3 -m coq deps' }
-    --    use 'ms-jpq/coq.artifacts'
-    --    use 'ms-jpq/coq.thirdparty'
-    --    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }}  
-    --    use {'neoclide/coc.nvim', branch = 'release'}
-    --    use 'simrat39/rust-tools.nvim'
-    --    use 'nvim-lua/plenary.nvim'
-    --    use 'mfussenegger/nvim-dap'
-    --
 end)

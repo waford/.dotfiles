@@ -192,7 +192,25 @@ bar {
 # Custom key bindings
 bindsym $sup+l exec "i3lock -c 000000"
 
+## Screenshots
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+
+## Clipboard Screenshots
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+
+# Set 4px between windows and 2px between windows and monitor (inner & outer sum)
+gaps inner 4px
+
+gaps outer 2px
+smart_gaps inverse_outer
+
 exec_always --no-startup-id ~/.config/i3/monitor_config.sh
+
+exec_always --no-startup-id xset dpms 0 0 3600 s off
 
 # Start specifc applications on workspaces
 
@@ -206,9 +224,9 @@ workspace 10    output HDMI-1
 
 exec_always --no-startup-id picom &
 exec_always --no-startup-id ~/.fehbg
-exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal; workspace 1'
-exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 2'
-exec --no-startup-id i3-msg 'workspace 8; exec firefox; workspace 8'
+#exec --no-startup-id i3-msg 'workspace 1; exec i3-sensible-terminal; workspace 1'
+#exec --no-startup-id i3-msg 'workspace 2; exec firefox; workspace 2'
+#exec --no-startup-id i3-msg 'workspace 8; exec firefox; workspace 8'
 for_window [class="Spotify"] move to workspace $ws10
 for_window [class="Slack"] move to workspace $ws9
 for_window [class="Signal"] move to workspace $ws9
