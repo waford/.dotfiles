@@ -39,4 +39,3 @@ nnoremap("<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- Set the current file as executable
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
