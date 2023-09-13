@@ -2,16 +2,26 @@
 
 -- Only required if you have packer configured as `opt`
 -- vim.cmd [[packadd packer.nvim]]
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-return require('packer').startup(function(use)
+return require('lazy').setup({
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
+    {'wbthomason/packer.nvim'},
+    {
+        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        dependencies = { {'nvim-lua/plenary.nvim'} }
+    },
    -- use ({
    --     'rose-pine/neovim',
    --     as = 'rose-pine',
@@ -19,22 +29,23 @@ return require('packer').startup(function(use)
    --         vim.cmd('colorscheme rose-pine')
    --     end
    -- })
-    use ({
+    { 
         "EdenEast/nightfox.nvim",
         as = "nightfox",
         config = function()
             vim.cmd("colorscheme nightfox")
         end
-    })
+    },
 
-    use ("nvim-treesitter/nvim-treesitter", { run = ':TSUpdate' })
-    use ('nvim-treesitter/playground', { run = "TSInstall query"})
-    use ('theprimeagen/harpoon')
-    use ('mbbill/undotree')
-    use ('tpope/vim-fugitive')
-    use {
-        'VonHeikemen/lsp-zero.nvim',
-        requires = {
+
+    {"nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
+    {'nvim-treesitter/playground', build = "TSInstall query"},
+    {'theprimeagen/harpoon'},
+    {'mbbill/undotree'},
+    {'tpope/vim-fugitive'},
+    {
+     'VonHeikemen/lsp-zero.nvim',
+        dependencies = {
             -- LSP Support
             {'neovim/nvim-lspconfig'},
             {'williamboman/mason.nvim'},
@@ -59,4 +70,4 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
-end)
+})

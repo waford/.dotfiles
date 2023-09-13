@@ -1,5 +1,5 @@
 require("waford")
 require("waford.set")
 require("waford.remap")
-require("waford.packer")
+require("waford.lazy")
 require("waford.autosave")
