@@ -36,10 +36,8 @@ return require('lazy').setup({
             vim.cmd("colorscheme nightfox")
         end
     },
-
-
     {"nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
-    {'nvim-treesitter/playground', build = "TSInstall query"},
+    {'nvim-treesitter/playground', build = ":TSInstall query"},
     {'theprimeagen/harpoon'},
     {'mbbill/undotree'},
     {'tpope/vim-fugitive'},
@@ -64,10 +62,12 @@ return require('lazy').setup({
             {'L3MON4D3/LuaSnip'},
             {'rafamadriz/friendly-snippets'},
         }
-    }
-    use {
+    },
+    {
         "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
+        config = function() 
+            require("nvim-autopairs").setup {} 
+        end
     }
 
 })
