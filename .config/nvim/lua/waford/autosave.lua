@@ -1,3 +1,4 @@
+print("Autosave Loaded")
 local start_pdflatex = function(filename)
     local pdflatex_flags = '-interaction=nonstopmode'
     local dot_index = string.find(filename, ".tex")
