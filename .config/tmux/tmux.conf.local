@@ -372,6 +372,10 @@ tmux_conf_copy_to_os_clipboard=false
 
 # if you don't want Oh my tmux! to alter a binding, use #!important
 # bind c new-window -c '#{pane_current_path}' #!important
+unbind C-h
+unbind C-l
+bind -r n next-window
+bind -r p previous-window
 
 # move status line to top
 #set -g status-position top

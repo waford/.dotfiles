@@ -6,3 +6,4 @@ alias get_idf='. $HOME/development/esp32/esp/esp-idf/export.sh'
 alias tor="cd ~/Programs/tor-browser/ && ~/Programs/tor-browser/start-tor-browser.desktop"
 alias nme="nmcli connection up eduroam"
 alias nmn="nmcli connection up Linksys08987"
+alias vim="nvim"
