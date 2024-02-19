@@ -439,8 +439,8 @@ font:
 #   - (Windows) powershell
 shell:
   program: tmux
-    #  args:
-    #    - --login
+    #args:
+    #- --login
 
 # Startup directory
 #
