@@ -1,0 +1,60 @@
+- hosts: localhost
+  tasks:
+  - name: "Configure Github User Email"
+    git_config:
+      name: user.email
+      scope: global
+      value: 'wesley.ford@gatech.edu'
+   
+  - name: "Configure Github User Name"
+    git_config:
+      name: user.name
+      scope: global
+      value: "Wesley Ford"
+
+  - name: "Configure Github Editor"
+    git_config:
+      name: core.editor
+      scope: global
+      value: nvim
+
+  - name: "Create bare dotfiles git repo"
+    git:
+      repo: https://github.com/waford/.dotfiles.git
+      dest: ~/.dotfiles
+      bare: true
+  - name: "Checkout dotfiles"
+    shell:
+      cmd: '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f'
+
+        #  - name: "Adding dotfiles alias"
+        #    lineinfile:
+        #      path: ~/.bash_aliases
+        #      line: "alias dotfies='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'"
+        #      regexp: "alias dotfies='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+        #      state: present
+        #      insertafter: EOF
+        #      create: true
+
+  - name: "Instaling Required Packages (apt)"
+    apt:
+      name: "{{ packages }}"
+      state: present
+    become: true
+    vars:
+      packages:
+      - git
+      - docker
+      - docker-compose
+      - python3-pip
+      - i3 
+      - tmux
+  - name: "Installing Required Packages (snap)"
+    snap: 
+      name: "{{ packages }}"
+      state: present
+      classic: true
+    become: true
+    vars:
+      packages:
+      - nvim
