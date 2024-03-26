@@ -43,7 +43,7 @@
 
   - name: "Create bare dotfiles git repo"
     git:
-      repo: https://github.com/waford/.dotfiles.git
+      repo: git@github.com:waford/.dotfiles.git
       dest: ~/.dotfiles
       bare: true
   - name: "Checkout dotfiles"
