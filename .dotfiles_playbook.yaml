@@ -1,5 +1,28 @@
 - hosts: localhost
   tasks:
+  - name: "Instaling Required Packages (apt)"
+    apt:
+      name: "{{ packages }}"
+      state: present
+    become: true
+    vars:
+      packages:
+      - git
+      - docker
+      - docker-compose
+      - python3-pip
+      - i3 
+      - tmux
+  - name: "Installing Required Packages (snap)"
+    snap: 
+      name: "{{ packages }}"
+      state: present
+      classic: true
+    become: true
+    vars:
+      packages:
+      - nvim
+      - alacritty
   - name: "Configure Github User Email"
     git_config:
       name: user.email
@@ -27,34 +50,16 @@
     shell:
       cmd: '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f'
 
-        #  - name: "Adding dotfiles alias"
-        #    lineinfile:
-        #      path: ~/.bash_aliases
-        #      line: "alias dotfies='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'"
-        #      regexp: "alias dotfies='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-        #      state: present
-        #      insertafter: EOF
-        #      create: true
+  - block:
+    - name: "Mapping CAPS->CTL"
+      lineinfile:
+        path: /etc/default/keyboard
+        line: 'XKBOPTIONS="ctrl:nocaps"'
+        regexp: 'XKBOPTIONS'
+        state: present
 
-  - name: "Instaling Required Packages (apt)"
-    apt:
-      name: "{{ packages }}"
-      state: present
-    become: true
-    vars:
-      packages:
-      - git
-      - docker
-      - docker-compose
-      - python3-pip
-      - i3 
-      - tmux
-  - name: "Installing Required Packages (snap)"
-    snap: 
-      name: "{{ packages }}"
-      state: present
-      classic: true
-    become: true
-    vars:
-      packages:
-      - nvim
+    - name: "Update Keyboard Mapping"
+      command: dpkg-reconfigure -f noninteractive keyboard-configuration
+
+    become: yes
+    become_user: root
