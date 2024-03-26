@@ -13,6 +13,7 @@
       - python3-pip
       - i3 
       - tmux
+      - fonts-cascadia-code
   - name: "Installing Required Packages (snap)"
     snap: 
       name: "{{ packages }}"

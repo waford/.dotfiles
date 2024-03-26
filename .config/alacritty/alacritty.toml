@@ -1,0 +1,20 @@
+[font]
+size=6
+
+[font.bold]
+family = "CascadiaCode"
+style = "Bold"
+
+[font.italic]
+family = "CascadiaCode"
+style = "Italic"
+
+[font.normal]
+family = "CascadiaCode"
+style = "Regular"
+
+[shell]
+program = "tmux"
+
+[window]
+opacity = 0.85
