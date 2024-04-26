@@ -17,10 +17,11 @@ vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
     -- Packer can manage itself
-    {'wbthomason/packer.nvim'},
+    { 'wbthomason/packer.nvim' },
     {
-        'nvim-telescope/telescope.nvim', branch = '0.1.x',
-        dependencies = { {'nvim-lua/plenary.nvim'} }
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
+        dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
     {
         "EdenEast/nightfox.nvim",
@@ -29,34 +30,40 @@ return require('lazy').setup({
             vim.cmd("colorscheme nightfox")
         end
     },
-    {"nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
-    {'nvim-treesitter/playground', build = ":TSInstall query"},
-    {'theprimeagen/harpoon'},
-    {'mbbill/undotree'},
-    {'tpope/vim-fugitive'},
+    { "nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
+    { 'nvim-treesitter/playground',      build = ":TSInstall query" },
+    { 'theprimeagen/harpoon' },
+    { 'mbbill/undotree' },
+    { 'tpope/vim-fugitive' },
     {
         'VonHeikemen/lsp-zero.nvim',
         dependencies = {
             -- LSP Support
-            {'neovim/nvim-lspconfig'},
-            {'williamboman/mason.nvim'},
-            {'williamboman/mason-lspconfig.nvim'},
+            { 'neovim/nvim-lspconfig' },
+            { 'williamboman/mason.nvim' },
+            { 'williamboman/mason-lspconfig.nvim' },
 
             -- Autocompletion
-            {'hrsh7th/nvim-cmp'},
-            {'hrsh7th/cmp-buffer'},
-            {'hrsh7th/cmp-path'},
-            {'saadparwaiz1/cmp_luasnip'},
-            {'hrsh7th/cmp-nvim-lsp'},
-            {'hrsh7th/cmp-nvim-lua'},
-            {'kdheepak/cmp-latex-symbols'},
-            {'windwp/nvim-autopairs'},
+            { 'hrsh7th/nvim-cmp' },
+            { 'hrsh7th/cmp-buffer' },
+            { 'hrsh7th/cmp-path' },
+            { 'saadparwaiz1/cmp_luasnip' },
+            { 'hrsh7th/cmp-nvim-lsp' },
+            { 'hrsh7th/cmp-nvim-lua' },
+            { 'kdheepak/cmp-latex-symbols' },
+            { 'windwp/nvim-autopairs' },
 
             -- Snippets
             {
                 'L3MON4D3/LuaSnip',
-                dependencies = {'rafamadriz/friendly-snippets'},
+                dependencies = { 'rafamadriz/friendly-snippets' },
             }
         }
+    },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
     },
 })

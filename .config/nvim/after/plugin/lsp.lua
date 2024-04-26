@@ -10,7 +10,18 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = {},
+  ensure_installed = {
+      lsp = {
+         "clangd",
+         "cmake-language-server",
+         "lua-language-server",
+         "python-lsp-server",
+         "pyright",
+    },
+    formatter = {
+        "black",
+    },
+  },
   handlers = {
     lsp_zero.default_setup,
     lua_ls = function()

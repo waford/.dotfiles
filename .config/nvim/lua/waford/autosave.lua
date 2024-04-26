@@ -9,7 +9,7 @@ local start_pdflatex = function(filename)
     --lol this is so stupid
       vim.fn.jobstart({"pdflatex", pdflatex_flags, filename}, { 
           on_exit = function()
-              vim.fn.jobstart({"bibtex", bibtex_file}, {
+              vim.fn.jobstart({"biber", bibtex_file}, {
                 on_exit = function()
                   vim.fn.jobstart({"pdflatex", pdflatex_flags, filename}, {
                     on_exit = function()

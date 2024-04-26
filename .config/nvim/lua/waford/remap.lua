@@ -10,7 +10,7 @@ vnoremap("J", ":m '>+1<CR>gv=gv")
 vnoremap("K", ":m '<-2<CR>gv=gv")
 
 -- Format
-nnoremap("<leader>ff", "ggVG=<C-o>")
+nnoremap("<leader>ff", vim.lsp.buf.format)
 
 -- Auto-center Up/Down Jumps
 nnoremap("<C-d>", "<C-d>zz")
