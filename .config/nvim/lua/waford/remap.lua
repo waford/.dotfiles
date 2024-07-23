@@ -2,6 +2,7 @@ local nnoremap = require("waford.keymap").nnoremap
 local inoremap = require("waford.keymap").inoremap
 local vnoremap = require("waford.keymap").vnoremap
 local xnoremap = require("waford.keymap").xnoremap
+local tnoremap = require("waford.keymap").tnoremap
 
 nnoremap("<leader>pd", vim.cmd.Ex)
 
@@ -39,4 +40,30 @@ nnoremap("<leader>S", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- Set the current file as executable
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+inoremap("<C-c>", "<Esc>")
+tnoremap("<C-c>", "<C-\\><C-N>")
+tnoremap("<Esc>", '<C-\\><C-N>')
+
+-- Use ATL+{h,j,k,l} to navigate in any mode
+tnoremap("<A-h>", "<C-\\><C-N><C-w>h")
+tnoremap("<A-j>", "<C-\\><C-N><C-w>j")
+tnoremap("<A-k>", "<C-\\><C-N><C-w>k")
+tnoremap("<A-l>", "<C-\\><C-N><C-w>l")
+
+inoremap("<A-h>", "<C-\\><C-N><C-w>h")
+inoremap("<A-j>", "<C-\\><C-N><C-w>j")
+inoremap("<A-k>", "<C-\\><C-N><C-w>k")
+inoremap("<A-l>", "<C-\\><C-N><C-w>l")
+
+inoremap("<A-h>", "<C-w>h")
+inoremap("<A-i>", "<C-w>i")
+inoremap("<A-k>", "<C-w>k")
+inoremap("<A-l>", "<C-w>l")
+
+-- Also use CTRL-w + {h,i,k,l} to navigate
+tnoremap("<C-w>", "<C-\\><C-N><C-w>")
+
+
+
 

@@ -40,7 +40,12 @@ cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
     {name = 'luasnip'},
-    {name = "buffer"}
+    {name = "buffer"},
+    {name = "latex_symbols",
+        option = {
+            strategy = 1, -- Julia (0 -- mixed, 2 -- latex)
+        },
+    },
   },
   mapping = cmp.mapping.preset.insert({
       ["<CR>"] = cmp.mapping.confirm({select = false}),
@@ -54,3 +59,5 @@ cmp.setup({
     end,
   },
 })
+
+

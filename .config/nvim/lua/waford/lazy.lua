@@ -66,4 +66,5 @@ return require('lazy').setup({
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
     },
+    { "Vigemus/iron.nvim" }
 })
