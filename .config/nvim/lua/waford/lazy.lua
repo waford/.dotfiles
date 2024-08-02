@@ -25,10 +25,10 @@ return require('lazy').setup({
     },
     {
         "EdenEast/nightfox.nvim",
-        as = "nightfox",
-        config = function()
-            vim.cmd("colorscheme nightfox")
-        end
+--        as = "nightfox",
+--        config = function()
+--            vim.cmd("colorscheme terafox")
+--        end
     },
     { "nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
     { 'nvim-treesitter/playground',      build = ":TSInstall query" },

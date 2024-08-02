@@ -5,7 +5,6 @@ local start_pdflatex = function(filename)
     local pdflatex_cmd = "pdflatex " .. pdflatex_flags .. " " .. filename
     local bibtex_cmd = "bibtex " .. bibtex_file
     local tex_compile_cmd = pdflatex_cmd .. bibtex_cmd .. pdflatex_cmd .. pdflatex_cmd
-    --vim.fn.jobstart({pdflatex_cmd, bibtex_cmd, pdflatex_cmd, pdflatex_cmd}, {
     --lol this is so stupid
       vim.fn.jobstart({"pdflatex", pdflatex_flags, filename}, { 
           on_exit = function()

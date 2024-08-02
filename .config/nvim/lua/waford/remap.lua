@@ -42,7 +42,6 @@ nnoremap("<leader>S", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 nnoremap("<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 inoremap("<C-c>", "<Esc>")
-tnoremap("<C-c>", "<C-\\><C-N>")
 tnoremap("<Esc>", '<C-\\><C-N>')
 
 -- Use ATL+{h,j,k,l} to navigate in any mode
