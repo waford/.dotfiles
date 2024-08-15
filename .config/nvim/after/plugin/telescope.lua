@@ -19,9 +19,11 @@ nnoremap("<leader>pg", builtin.git_files, {})
 nnoremap("<leader>ht", builtin.help_tags, {})
 nnoremap("<leader>pp", builtin.planets, {})
 
-nnoremap("<leader>ps", function()
+nnoremap("<leader>pS", function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") });
 end)
+
+nnoremap("<leader>ps", builtin.grep_string)
 
 nnoremap("<leader>lg", builtin.live_grep, {})
 

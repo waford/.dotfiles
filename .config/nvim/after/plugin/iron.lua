@@ -21,6 +21,9 @@ iron.setup {
       dockerfile = {
         command = {"bash"}
       },
+      markdown = {
+        command = {"bash"}
+      },
       python = {
         command = { "python3" },  -- or { "ipython", "--no-autoindent" }
         format = require("iron.fts.common").bracketed_paste_python

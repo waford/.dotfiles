@@ -5,7 +5,7 @@ vim.opt.number=true                   -- Enable line numbers
 vim.opt.relativenumber=true           -- Enable relative liune numbers
 
 -- Indenting and Formating
-vim.opt.tabstop=4                     -- Sets width of tabs to 4 spaces
+vim.opt.tabstop=4                   -- Sets width of tabs to 4 space
 vim.opt.softtabstop=4                 -- Simulate tabstops of 4 spaces
 vim.opt.shiftwidth=4                  -- Sets width of indent to 4 spaces
 vim.opt.expandtab=true                -- Expands tab key to spaces
@@ -29,5 +29,7 @@ vim.opt.spell=true                    -- Enable spell check
 
 vim.g.mapleader=" "                   -- Set leader to space
 
+
+vim.opt.conceallevel = 3
 
 

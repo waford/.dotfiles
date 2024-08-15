@@ -25,14 +25,14 @@ return require('lazy').setup({
     },
     {
         "EdenEast/nightfox.nvim",
-        as = "nightfox",
-        config = function()
-            vim.cmd("colorscheme nightfox")
-        end
-    },
-    { "nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
-    { 'nvim-treesitter/playground',      build = ":TSInstall query" },
-    { 'theprimeagen/harpoon',
+        --        as = "nightfox",
+        --        config = function()
+            --            vim.cmd("colorscheme terafox")
+            --        end
+        },
+        { "nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
+        { 'nvim-treesitter/playground',      build = ":TSInstall query" },
+        { 'theprimeagen/harpoon',
         branch = "harpoon2",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
@@ -69,5 +69,32 @@ return require('lazy').setup({
         ft = { "markdown" },
         build = function() vim.fn["mkdp#util#install"]() end,
     },
-    { "Vigemus/iron.nvim" }
+    { "Vigemus/iron.nvim" },
+    {
+        "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers",
+        cmd = "Neorg",
+        ft = "norg",
+        opts = {
+            load = {
+                ["core.defaults"] = {}, -- Loads default behaviour
+                ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                ["core.dirman"] = { -- Manages Neorg workspaces
+                    config = {
+                        workspaces = {
+                            notes = "~/notes",
+                        },
+                        default_workspace = "notes",
+                    },
+                },
+            },
+        },
+        --lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+        version = "*", -- Pin Neorg to the latest stable release
+        config = true,
+        dependencies = {
+            { "nvim-lua/plenary.nvim", },
+            { "nvim-treesitter/nvim-treesitter",},
+        },
+    }
 })
