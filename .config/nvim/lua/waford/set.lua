@@ -30,4 +30,6 @@ vim.opt.spell=true                    -- Enable spell check
 vim.g.mapleader=" "                   -- Set leader to space
 
 
+vim.opt.conceallevel = 3
+
 
