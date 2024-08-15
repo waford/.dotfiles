@@ -23,13 +23,13 @@ return require('lazy').setup({
         branch = '0.1.x',
         dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
-    {
-        "EdenEast/nightfox.nvim",
-        --        as = "nightfox",
-        --        config = function()
-            --            vim.cmd("colorscheme terafox")
-            --        end
-        },
+--    {
+--        "EdenEast/nightfox.nvim",
+--        --        as = "nightfox",
+--        --        config = function()
+--            --            vim.cmd("colorscheme terafox")
+--            --        end
+--        },
         { "nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
         { 'nvim-treesitter/playground',      build = ":TSInstall query" },
         { 'theprimeagen/harpoon',
