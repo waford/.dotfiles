@@ -15,6 +15,12 @@ iron.setup {
         -- returns a table (see below)
         command = {"bash"}
       },
+      cpp = {
+        command = {"bash"}
+      },
+      dockerfile = {
+        command = {"bash"}
+      },
       python = {
         command = { "python3" },  -- or { "ipython", "--no-autoindent" }
         format = require("iron.fts.common").bracketed_paste_python
