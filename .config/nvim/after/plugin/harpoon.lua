@@ -5,16 +5,6 @@ local nnoremap = require("waford.keymap").nnoremap
 harpoon:setup()
 -- REQUIRED
 
-nnoremap("<leader>ha", function() harpoon:list():add() end)
-
---vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
---vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
---vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
---vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
-
--- Toggle previous & next buffers stored within Harpoon list
-nnoremap("<leader>hp", function() harpoon:list():prev() end)
-nnoremap("<leader>hn", function() harpoon:list():next() end)
 
 -- basic telescope configuration
 local conf = require("telescope.config").values
@@ -33,6 +23,13 @@ local function toggle_telescope(harpoon_files)
         sorter = conf.generic_sorter({}),
     }):find()
 end
+
+nnoremap("<leader>ha", function() harpoon:list():add() end)
+nnoremap("<leader>hc", function() harpoon:list():clear() end)
+
+-- Toggle previous & next buffers stored within Harpoon list
+nnoremap("<leader>hp", function() harpoon:list():prev() end)
+nnoremap("<leader>hn", function() harpoon:list():next() end)
 
 nnoremap("<leader>he", function() toggle_telescope(harpoon:list()) end,
     { desc = "Open harpoon window" })
