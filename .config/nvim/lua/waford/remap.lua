@@ -62,7 +62,3 @@ inoremap("<A-l>", "<C-w>l")
 
 -- Also use CTRL-w + {h,i,k,l} to navigate
 tnoremap("<C-w>", "<C-\\><C-N><C-w>")
-
-
-
-
