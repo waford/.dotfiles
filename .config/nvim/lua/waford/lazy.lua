@@ -23,16 +23,17 @@ return require('lazy').setup({
         branch = '0.1.x',
         dependencies = { { 'nvim-lua/plenary.nvim' } }
     },
---    {
---        "EdenEast/nightfox.nvim",
---        --        as = "nightfox",
---        --        config = function()
---            --            vim.cmd("colorscheme terafox")
---            --        end
---        },
-        { "nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
-        { 'nvim-treesitter/playground',      build = ":TSInstall query" },
-        { 'theprimeagen/harpoon',
+    {
+        "EdenEast/nightfox.nvim",
+        --        as = "nightfox",
+        --        config = function()
+        --            vim.cmd("colorscheme terafox")
+        --        end
+    },
+    { "nvim-treesitter/nvim-treesitter", build = ':TSUpdate' },
+    { 'nvim-treesitter/playground',      build = ":TSInstall query" },
+    {
+        'theprimeagen/harpoon',
         branch = "harpoon2",
         dependencies = { "nvim-lua/plenary.nvim" }
     },
@@ -77,9 +78,9 @@ return require('lazy').setup({
         ft = "norg",
         opts = {
             load = {
-                ["core.defaults"] = {}, -- Loads default behaviour
+                ["core.defaults"] = {},  -- Loads default behaviour
                 ["core.concealer"] = {}, -- Adds pretty icons to your documents
-                ["core.dirman"] = { -- Manages Neorg workspaces
+                ["core.dirman"] = {      -- Manages Neorg workspaces
                     config = {
                         workspaces = {
                             notes = "~/notes",
@@ -94,7 +95,7 @@ return require('lazy').setup({
         config = true,
         dependencies = {
             { "nvim-lua/plenary.nvim", },
-            { "nvim-treesitter/nvim-treesitter",},
+            { "nvim-treesitter/nvim-treesitter", },
         },
     }
 })
