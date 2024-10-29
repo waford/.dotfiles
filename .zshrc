@@ -49,6 +49,8 @@ ZSH_THEME="bureau"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 COMPLETION_WAITING_DOTS="true"
 
+unsetopt AUTO_PUSHD
+
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
@@ -78,6 +80,7 @@ VI_MODE_SET_CURSOR=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+unsetopt autopushd
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -112,14 +115,14 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/waford/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/waford/storage/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/waford/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/waford/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/waford/storage/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/waford/storage/miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/waford/miniconda3/bin:$PATH"
+        export PATH="/home/waford/storage/miniforge3/bin:$PATH"
     fi
 fi
 unset __conda_setup

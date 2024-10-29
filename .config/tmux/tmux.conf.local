@@ -381,6 +381,8 @@ bind -r c new-window
 # move status line to top
 #set -g status-position top
 
+set -g default-shell /bin/zsh
+
 
 # -- tpm -----------------------------------------------------------------------
 
