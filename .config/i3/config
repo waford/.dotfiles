@@ -190,17 +190,17 @@ bar {
 
 
 # Custom key bindings
-bindsym $sup+l exec "i3lock -c 000000"
+bindsym $sup+l exec --no-startup-id ~/.config/i3/lock.sh
 
 ## Screenshots
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date)"
+bindsym Print exec --no-startup-id main "/home/$USER/Pictures/$(date)"
+bindsym $mod+Print exec --no-startup-id main --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
+bindsym Shift+Print exec --no-startup-id main --select "/home/$USER/Pictures/$(date)"
 
 ## Clipboard Screenshots
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print exec --no-startup-id main | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id main --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id main --select | xclip -selection clipboard -t image/png
 
 # Set 4px between windows and 2px between windows and monitor (inner & outer sum)
 #gaps inner 4px
