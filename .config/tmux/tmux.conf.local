@@ -383,6 +383,26 @@ bind -r c new-window
 
 set -g default-shell /bin/zsh
 
+bind -T root F12  \
+  set prefix None \;\
+  set key-table off \;\
+  refresh-client -S \;\
+  #set status-style "fg=$color_status_text,bg=$color_window_off_status_bg" \;\
+  #set window-status-current-format "#[fg=$color_window_off_status_bg,bg=$color_window_off_status_current_bg]$separator_powerline_right#[default] #I:#W# #[fg=$color_window_off_status_current_bg,bg=$color_window_off_status_bg]$separator_powerline_right#[default]" \;\
+  #set window-status-current-style "fg=$color_dark,bold,bg=$color_window_off_status_current_bg" \;\
+  if -F '#{pane_in_mode}' 'send-keys -X cancel' \;\
+
+bind -T off F12 \
+  set -u prefix \;\
+  set -u key-table \;\
+  refresh-client -S \;\
+  #set -u status-style \;\
+  #set -u window-status-current-style \;\
+  #set -u window-status-current-format \;\
+  refresh-client -S
+
+wg_is_keys_off="#[fg=white]#([ $(tmux show-options -qv key-table) = 'off' ] && echo 'OFF')#[default]"
+tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} $wg_is_keys_off, %R , %d %b | #{username}#{root} | #{hostname} "
 
 # -- tpm -----------------------------------------------------------------------
 
