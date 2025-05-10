@@ -1,20 +1,25 @@
 [font]
-size=12
+size=6
 
 [font.bold]
-family = "CascadiaCode"
+family = "JetBrains Mono"
 style = "Bold"
 
 [font.italic]
-family = "CascadiaCode"
+family = "JetBrains Mono"
 style = "Italic"
 
 [font.normal]
-family = "CascadiaCode"
+family = "JetBrains Mono"
 style = "Regular"
+
+[font.bold_italic]
+family = "JetBrains Mono"
+style = "BoldItalic"
+
 
 [shell]
 program = "tmux"
 
 [window]
-opacity = 0.85
+opacity = 0.1

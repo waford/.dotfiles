@@ -9,6 +9,7 @@ order += "cpu_usage"
 order += "ethernet _first_"
 order += "wireless _first_"
 order += "memory"
+order += "battery all"
 order += "tztime local"
 
 cpu_usage {

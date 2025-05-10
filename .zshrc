@@ -115,17 +115,21 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/waford/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/waford/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/waford/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/waford/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/waford/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/home/waford/miniforge3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/waford/miniconda3/bin:$PATH"
+        export PATH="/home/waford/miniforge3/bin:$PATH"
     fi
 fi
 unset __conda_setup
+
+if [ -f "/home/waford/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/home/waford/miniforge3/etc/profile.d/mamba.sh"
+fi
 # <<< conda initialize <<<
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
@@ -134,3 +138,4 @@ if [ -f "/home/waford/.mujuco_setup.zsh" ]; then
     . "/home/waford/.mujuco_setup.zsh"
 fi
 
+source $HOME/export-esp.sh

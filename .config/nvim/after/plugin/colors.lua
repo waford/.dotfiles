@@ -6,4 +6,4 @@ function SetColor(color)
     --    vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
 end
 
-SetColor("carbonfox")
+SetColor("terafox")
